@@ -79,20 +79,20 @@
         <div class="row">
             <div class="col-md-3">
                 <a th:href="@{#}" class="btn btn-primary btn-block" data-toggle="modal"
-                   data-target="#addPostModal">
+                   data-target="#addStudentModal">
                     <i class="fas fa-plus"></i>Add Student
                 </a>
             </div>
             <div class="col-md-3">
                 <a th:href="@{#}" class="btn btn-success btn-block" data-toggle="modal"
-                   data-target="#addCategoryModal">
+                   data-target="#addClassModal">
                     <i class="fas fa-plus"></i>Add Class
                 </a>
             </div>
             <div class="col-md-3">
                 <a th:href="@{#}
 " class="btn btn-warning btn-block" data-toggle="modal"
-                   data-target="#addUserModal">
+                   data-target="#addTeacherModal">
                     <i class="fas fa-plus"></i>Add Teacher
                 </a>
             </div>
@@ -244,7 +244,7 @@
 <!--ADD STUDENT MODAL-->
 
 
-<div class="modal fade" id="SignUp">
+<div class="modal fade" id="addStudentModal">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
@@ -254,7 +254,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form th:action="@{/register}" th:object="${users}" method="post">
+                <form th:action="@{/add_student}" th:object="${users}" method="post">
                     <div class="form-group">
                         <!--                        <label for="FirstName">FirstName</label>-->
                         <input type="text" th:field="*{firstName} "class="form-control" placeholder="FirstName">
@@ -336,7 +336,7 @@
 <!--</div>-->
 
 <!--Add Category Modal-->
-<div class="modal fade" id="addCategoryModal">
+<div class="modal fade" id="addClassModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-success text-white">
@@ -346,10 +346,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form th:action="@{/add_student}" th:object="${users}" th:method="post">
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control">
+<!--                        <label for="title">Title</label>-->
+                        <input type="text" th:field="*{id}" class="form-control" placeholder="Title">
                     </div>
 
                 </form>
@@ -362,7 +362,7 @@
 </div>
 
 <!--Add Teacher Modal-->
-<div class="modal fade" id="addUserModal">
+<div class="modal fade" id="addTeacherModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
@@ -372,28 +372,39 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form th:action="@{/add_student}" th:object="${users}" th:method="post">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control">
+<!--                        <label for="name">Name</label>-->
+                        <input type="text" th:field="*{firstName}" class="form-control" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control">
+                        <!--                        <label for="name">Name</label>-->
+                        <input type="text" th:field="*{lastName}" class="form-control" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control">
+<!--                        <label for="email">Email</label>-->
+                        <input type="email" th:field="*{email}" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Confirm Password</label>
-                        <input type="password" class="form-control">
+<!--                        <label for="password">Password</label>-->
+                        <input type="password" th:field="*{gender}" class="form-control" placeholder="Gender">
+                    </div>
+                    <div class="form-group">
+<!--                        <label for="password">Confirm Password</label>-->
+                        <input type="password" th:field="*{email}" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <!--                        <label for="name">Name</label>-->
+                        <input type="text" th:field="*{dateOfBirth}" class="form-control" placeholder="DateOfBirth">
+                    </div>
+                    <div class="modal-footer">
+                        <button th:type="submit" type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-warning" data-dismiss="modal">Save Changes</button>
-            </div>
+<!--            <div class="modal-footer">-->
+<!--                <button class="btn btn-warning" data-dismiss="modal">Save Changes</button>-->
+<!--            </div>-->
         </div>
     </div>
 </div>
