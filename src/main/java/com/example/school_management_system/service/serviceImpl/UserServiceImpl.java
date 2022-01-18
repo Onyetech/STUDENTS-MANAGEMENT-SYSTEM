@@ -1,6 +1,6 @@
 package com.example.school_management_system.service.serviceImpl;
 
-import com.example.school_management_system.model.Users;
+import com.example.school_management_system.model.AppUser;
 import com.example.school_management_system.repository.UserRepository;
 import com.example.school_management_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +15,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public Users findByEmail(String email) {
+    public AppUser findByEmail(String email) {
         return userRepository.findUsersByEmail(email);
     }
 
     @Override
-    public void register(Users users) {
+    public void register(AppUser users) {
         userRepository.save(users);
     }
 

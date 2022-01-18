@@ -1,9 +1,9 @@
 package com.example.school_management_system.service;
 
-import com.example.school_management_system.model.Users;
+import com.example.school_management_system.model.AppUser;
 
 public interface UserService {
-    Users findByEmail(String email);
-    public void register(Users users);
+    AppUser findByEmail(String email);
+    public void register(AppUser users);
     public boolean existByEmail(String email);
 }

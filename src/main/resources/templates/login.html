@@ -17,7 +17,7 @@
 <!-- START HERE -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-        <a href="index.html" class="navbar-brand">Admin</a>
+        <a href="dashboard.html" class="navbar-brand">Admin</a>
 
 
     </div>
@@ -54,14 +54,14 @@
                         <h4>Account Login</h4>
                     </div>
                     <div class="card-body">
-                        <form action="index.html" th:action="@{/studentresult}" th:object="${users}" method="post">
+                        <form action="dashboard.html" th:action="@{/login}" th:object="${users}" method="post">
                             <div class="form-group">
 
-                                <input type="email" th:field ="*{email}" class="form-control" placeholder="Email">
+                                <input type="email" name="email" th:field ="*{email}" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
 <!--                                <label for="password">Password</label>-->
-                                <input type="Password" th:field ="*{password}" class="form-control" placeholder="Password">
+                                <input type="Password" name="password" th:field ="*{password}" class="form-control" placeholder="Password">
                             </div>
                             <input type="submit" value="Login" class="btn btn-primary btn-block">
                         </form>

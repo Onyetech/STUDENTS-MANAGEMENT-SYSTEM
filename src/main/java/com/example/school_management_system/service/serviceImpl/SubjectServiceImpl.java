@@ -1,4 +1,6 @@
 package com.example.school_management_system.service.serviceImpl;
 
-public class CourseServiceImpl {
+import com.example.school_management_system.service.SubjectService;
+
+public class SubjectServiceImpl implements SubjectService {
 }
